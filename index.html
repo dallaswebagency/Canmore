@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meg's Canmore Cleaning | Vacation Rental and House Cleaning in Canmore</title>
+<meta name="description" content="Your trusted partner for vacation rental and house cleaning in Canmore. Our cleaners make you smile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16120f;
+  --ink2:#2b221c;
+  --orange:#FF931E;
+  --orange-deep:#c76400;
+  --cream:#FFF5E6;
+  --paper:#fffdf9;
+  --muted:#5d5148;
+  --line:rgba(22,18,15,.14);
+  --display:'Fraunces',Georgia,serif;
+  --body:'Figtree',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+
+/* photo slots: real photo on top, warm fallback underneath */
+.ph{background-size:cover;background-position:center;background-color:#e9d9c3;position:relative;overflow:hidden}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,147,30,.10),rgba(22,18,15,.18));pointer-events:none}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:rgba(255,253,249,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-.01em}
+.brand img{height:34px;width:auto}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{font-weight:600;font-size:.95rem;position:relative;padding:4px 0}
+nav a:not(.btn):after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--orange);transition:width .25s}
+nav a:not(.btn):hover:after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:var(--ink);font-weight:700;padding:14px 26px;border-radius:999px;border:2px solid var(--ink);transition:transform .2s,box-shadow .2s;box-shadow:4px 4px 0 var(--ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn.ghost{background:transparent}
+.top .btn{padding:10px 20px;font-size:.92rem;box-shadow:3px 3px 0 var(--ink)}
+.burger{display:none;background:none;border:2px solid var(--ink);border-radius:10px;width:44px;height:44px;font-size:1.3rem;cursor:pointer}
+
+/* hero */
+.hero{position:relative;background:var(--cream);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-block:64px 110px}
+.eyebrow{display:inline-block;font-weight:700;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:18px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,5.6vw,4.7rem);line-height:1.02;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;color:var(--orange-deep);position:relative;white-space:nowrap}
+.hero h1 em svg{position:absolute;left:0;bottom:-12px;width:100%;height:14px}
+.hero .tag{margin-top:22px;font-size:1.15rem;color:var(--muted);max-width:30em}
+.places{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.places span{border:2px solid var(--ink);border-radius:999px;padding:6px 16px;font-weight:600;font-size:.95rem;background:var(--paper)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
+.hero-visual{position:relative}
+.hero-photo{aspect-ratio:1/1.08;border-radius:32px 32px 32px 140px;border:3px solid var(--ink);box-shadow:12px 12px 0 var(--orange)}
+.hero-logo{position:absolute;left:-54px;bottom:-40px;width:min(420px,78%);background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:14px 18px;box-shadow:6px 6px 0 var(--ink)}
+.moon{position:absolute;right:-26px;top:-26px;width:92px;height:92px;border-radius:50%;background:var(--orange);border:3px solid var(--ink);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;font-size:.85rem;line-height:1.1;transform:rotate(10deg)}
+.wave{position:absolute;left:0;right:0;bottom:-1px;line-height:0}
+.wave svg{width:100%;height:80px}
+
+/* services : two big horizontal slabs */
+.services{padding:30px 0 90px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px;flex-wrap:wrap}
+.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,3.1rem);line-height:1.05;letter-spacing:-.02em;max-width:16em}
+.sec-head p{max-width:26em;color:var(--muted)}
+.slab{display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--ink);border-radius:28px;overflow:hidden;background:var(--paper);margin-bottom:28px;box-shadow:8px 8px 0 var(--ink)}
+.slab .ph{min-height:340px}
+.slab .txt{padding:46px 46px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.slab .num{font-family:var(--display);font-weight:800;font-size:.95rem;color:var(--orange-deep);letter-spacing:.1em}
+.slab h3{font-family:var(--display);font-weight:800;font-size:2.1rem;line-height:1.08;letter-spacing:-.015em}
+.slab .link{font-weight:700;display:inline-flex;gap:10px;align-items:center;border-bottom:3px solid var(--orange);padding-bottom:2px;align-self:flex-start}
+.slab.flip{grid-template-columns:1fr 1fr}
+.slab.flip .ph{order:2}
+.slab.dark{background:var(--ink);color:var(--paper)}
+.slab.dark .num{color:var(--orange)}
+.slab.dark .link{border-color:var(--orange)}
+
+/* about / experience */
+.story{background:var(--ink);color:var(--paper);position:relative;padding:100px 0}
+.story .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.story h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,3.2rem);line-height:1.06;letter-spacing:-.02em}
+.story h2 span{color:var(--orange)}
+.story .side{position:sticky;top:110px}
+.story .side img{width:min(320px,100%);margin-top:34px;filter:invert(0)}
+.story .side .logo-card{background:var(--paper);border-radius:20px;padding:16px 20px;margin-top:30px;display:inline-block}
+.para{border-left:3px solid var(--orange);padding:4px 0 4px 28px;margin-bottom:34px;font-size:1.12rem;color:#efe6da}
+.para strong{color:var(--orange)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px}
+.fact{border:2px solid rgba(255,255,255,.22);border-radius:18px;padding:20px 18px}
+.fact b{display:block;font-family:var(--display);font-size:1.5rem;color:var(--orange);line-height:1.1;margin-bottom:6px}
+.fact span{font-size:.92rem;color:#d9cdbe}
+
+/* summer */
+.summer{position:relative;background:var(--orange);color:var(--ink);overflow:hidden}
+.summer .ph{position:absolute;inset:0;opacity:.28;mix-blend-mode:multiply}
+.summer .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;padding-block:96px}
+.summer h2{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,6.2vw,5.4rem);line-height:.98;letter-spacing:-.03em}
+.summer p{font-size:1.2rem;font-weight:500;margin-bottom:12px}
+.summer .btn{background:var(--ink);color:var(--paper);border-color:var(--ink);box-shadow:4px 4px 0 var(--paper);margin-top:18px}
+.summer .btn:hover{box-shadow:6px 6px 0 var(--paper)}
+
+/* areas */
+.areas{padding:90px 0;background:var(--cream)}
+.areas .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.areas h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.06;letter-spacing:-.02em;margin-bottom:18px}
+.areas p{color:var(--muted);font-size:1.08rem}
+.route{display:flex;flex-direction:column;gap:0;position:relative;padding-left:44px}
+.route:before{content:"";position:absolute;left:14px;top:18px;bottom:18px;width:0;border-left:3px dashed var(--orange)}
+.stop{position:relative;padding:16px 0;font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.01em;border-bottom:1px solid var(--line)}
+.stop:last-child{border:none}
+.stop:before{content:"";position:absolute;left:-39px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--paper);border:4px solid var(--orange)}
+.stop small{display:block;font-family:var(--body);font-weight:500;font-size:.95rem;color:var(--muted);letter-spacing:0}
+
+/* closing CTA */
+.final{padding:96px 0;text-align:center}
+.final h2{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5vw,4rem);line-height:1.04;letter-spacing:-.025em;max-width:14em;margin:0 auto 18px}
+.final p{color:var(--muted);max-width:32em;margin:0 auto 30px;font-size:1.1rem}
+.final img.sig{width:min(520px,80%);margin:0 auto 22px}
+
+/* footer */
+footer{background:var(--ink);color:#e8dccd;padding:60px 0 30px}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.14)}
+footer .logo-card{background:var(--paper);border-radius:16px;padding:10px 16px;display:inline-block}
+footer .logo-card img{height:54px;width:auto}
+footer h4{font-family:var(--display);color:var(--orange);font-size:1.05rem;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a:hover{color:var(--orange)}
+footer .name{font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--paper);margin:16px 0 6px}
+.bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.92rem;color:#b9ab9a}
+.bottom a{color:var(--orange);font-weight:600}
+
+/* motion */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:980px){
+  .hero .wrap,.story .wrap,.summer .wrap,.areas .wrap{grid-template-columns:1fr}
+  .hero .wrap{padding-block:44px 100px;gap:60px}
+  .hero-logo{left:10px}
+  .moon{right:6px}
+  .slab,.slab.flip{grid-template-columns:1fr}
+  .slab.flip .ph{order:0}
+  .slab .ph{min-height:240px}
+  .slab .txt{padding:32px 26px}
+  .story .side{position:static}
+  .facts{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  .burger{display:block}
+  nav{position:absolute;top:74px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);display:none;padding:18px 4vw 26px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:flex-start;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="http://www.megscanmorecleaning.com/" aria-label="Meg's Canmore Cleaning home">
+      <img src="images/logo.png" alt="Meg's Canmore Cleaning logo">
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <nav id="nav">
+      <ul>
+        <li><a href="http://www.megscanmorecleaning.com/">Home</a></li>
+        <li><a href="http://www.megscanmorecleaning.com/service.html">Service</a></li>
+        <li><a href="http://www.megscanmorecleaning.com/covid19safety.html">Covid19</a></li>
+        <li><a href="http://www.megscanmorecleaning.com/pg4060336.html">Testimonials</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a class="btn" href="http://www.megscanmorecleaning.com/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Banff &middot; Canmore &middot; Harvie Heights</span>
+      <h1>Our cleaners make you <em>smile.
+        <svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 60 1, 110 13, 160 6 S 260 2, 298 8" fill="none" stroke="#FF931E" stroke-width="5" stroke-linecap="round"/></svg>
+      </em></h1>
+      <p class="tag">Your trusted partner for vacation rental and house cleaning in Canmore.</p>
+      <div class="places"><span>Banff</span><span>Canmore</span><span>Harvie Heights</span></div>
+      <div class="cta">
+        <a class="btn" href="http://www.megscanmorecleaning.com/contact.html">Get a Free Quote Now &rarr;</a>
+        <a class="btn ghost" href="http://www.megscanmorecleaning.com/service.html#vacationrentalcleaning">Vacation Rental Cleaning</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="ph hero-photo" style="background-image:url(images/hero.jpg)" role="img" aria-label="A freshly cleaned vacation rental in the Canadian Rockies"></div>
+      <div class="moon">Meg's<br>Canmore<br>Cleaning</div>
+      <div class="hero-logo"><img src="images/logo.png" alt="Meg's Canmore Cleaning witch on a broom logo"></div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 240 10, 420 80, 720 44 S 1220 6, 1440 48 L1440 80 L0 80Z" fill="#fffdf9"/><path d="M0 50 C 240 10, 420 80, 720 44 S 1220 6, 1440 48" fill="none" stroke="#FF931E" stroke-width="4"/></svg></div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Two ways we keep the mountains' homes spotless.</h2>
+      <p>Best professional cleaning services for vacation rentals and residential homes in Canmore/Banff area.</p>
+    </div>
+
+    <article class="slab reveal" id="vacationrentalcleaning">
+      <div class="ph" style="background-image:url(images/vacation-rental.jpg)" role="img" aria-label="Vacation rental bedroom made up for guests"></div>
+      <div class="txt">
+        <span class="num">01</span>
+        <h3>Vacation Rental Cleaning</h3>
+        <p>We will make sure that your vacation rentals are properly cleaned and leave no signs of previous guests. The satisfaction of your guests is our utmost priority.</p>
+        <a class="link" href="http://www.megscanmorecleaning.com/service.html#vacationrentalcleaning">See the service &rarr;</a>
+      </div>
+    </article>
+
+    <article class="slab flip dark reveal" id="residentialcleaning">
+      <div class="ph" style="background-image:url(images/residential.jpg)" role="img" aria-label="Clean residential kitchen"></div>
+      <div class="txt">
+        <span class="num">02</span>
+        <h3>Residential House Cleaning</h3>
+        <p>Careful house cleaning for homes in Banff, Canmore and Harvie Heights, with attention to every minor detail.</p>
+        <a class="link" href="http://www.megscanmorecleaning.com/service.html#residentialcleaning">See the service &rarr;</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap">
+    <div class="side reveal">
+      <h2>Guests should enjoy <span>the mountains</span> to the fullest.</h2>
+      <div class="logo-card"><img src="images/logo.png" alt="Meg's Canmore Cleaning logo" style="width:300px"></div>
+    </div>
+    <div class="reveal">
+      <p class="para">We guarantee your vacation units are cleaned giving attention to <strong>every minor detail</strong> so that our guests can enjoy the mountains to the fullest extent.</p>
+      <p class="para">We have managed <strong>over 20 vacation rental units/hotels</strong> in the past in Japan, and are very familiar with managing cleaning departments.</p>
+      <p class="para">Our supervisor has experience as an <strong>executive level concierge at five-star hotels</strong> as well as vacation rental cleaning experience in Canada. Therefore, we have a high understanding of the standards you and your guests may have and are confident to meet those standards.</p>
+      <div class="facts">
+        <div class="fact"><b>20+</b><span>vacation rental units and hotels managed in Japan</span></div>
+        <div class="fact"><b>5-star</b><span>hotel concierge experience on our supervisor's side</span></div>
+        <div class="fact"><b>Every detail</b><span>checked, so no sign of previous guests is left</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMER -->
+<section class="summer">
+  <div class="ph" style="background-image:url(images/mountains.jpg)" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="reveal">Get ready for the summer!</h2>
+    <div class="reveal">
+      <p>Because Vacation Rental in the Canadian Rockies are very popular, the shortage of cleaning companies is very serious.</p>
+      <p>Currently many companies are unable to accept new contracts.</p>
+      <p><strong>Hurry! Keep your cleaners for the coming summer now!</strong></p>
+      <a class="btn" href="http://www.megscanmorecleaning.com/contact.html">Get a Free Quote Now &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Where we clean.</h2>
+      <p>Our cleaning service will offer cleaning in Banff, Canmore, Harvie Heights and possible acceptations with additional charges in Lake Louise and Big Horn areas. For further details please feel free to contact us at any time.</p>
+    </div>
+    <div class="route reveal">
+      <div class="stop">Banff</div>
+      <div class="stop">Canmore</div>
+      <div class="stop">Harvie Heights</div>
+      <div class="stop"><small>Possible, with additional charges</small>Lake Louise &amp; Big Horn</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap reveal">
+    <img class="sig" src="images/logo.png" alt="Meg's Canmore Cleaning witch on a broom with hearts">
+    <h2>Keep your cleaners for the coming summer.</h2>
+    <p>Meg's Canmore Cleaning. Banff, Canmore, Harvie Heights.</p>
+    <a class="btn" href="http://www.megscanmorecleaning.com/contact.html">Get a Free Quote Now &rarr;</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo-card"><img src="images/logo.png" alt="Meg's Canmore Cleaning logo"></div>
+        <div class="name">Meg's Canmore Cleaning</div>
+        <p>Banff &middot; Canmore &middot; Harvie Heights</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="http://www.megscanmorecleaning.com/">Home</a></li>
+          <li><a href="http://www.megscanmorecleaning.com/service.html">Service</a></li>
+          <li><a href="http://www.megscanmorecleaning.com/covid19safety.html">Covid19</a></li>
+          <li><a href="http://www.megscanmorecleaning.com/pg4060336.html">Testimonials</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="http://www.megscanmorecleaning.com/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow &amp; More</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/MegsCanmoreCleaning/">Facebook</a></li>
+          <li><a href="http://www.megscanmorecleaning.com/guide/policy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>Copyright Meg's Canmore Cleaning. All Rights Reserved.</span>
+      <span>Design by <a href="https://cleanningdigital.com/">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
